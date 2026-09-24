@@ -51,6 +51,20 @@ Refer to technology-specific instruction files:
 - Use props for configuration, not duplication
 - Document component APIs with TypeScript types
 
+### Commenting Philosophy
+
+Comments should explain intent, trade-offs, and why a decision exists. They should not restate the code or copy the function/prop names into prose.
+
+Good:
+- `// Keep the list ordered alphabetically so static builds stay deterministic.`
+- `// Avoid reusing the cached result here; the data source changes per page.`
+
+Bad:
+- `// Loop through the games.`
+- `// Return the game title.`
+
+When a code path changes, update or remove outdated comments in the same change. Stale comments are treated as bugs because they mislead future contributors and agents.
+
 ## Development Workflow
 
 1. **Choose the right tool**: 

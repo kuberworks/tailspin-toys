@@ -27,6 +27,8 @@ export default [
         "error",
         { argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
       ],
+      // Public TypeScript APIs should declare return types to document behavior and keep contracts obvious.
+      "@typescript-eslint/explicit-module-boundary-types": "error",
     },
   },
 
