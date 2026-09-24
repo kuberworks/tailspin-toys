@@ -35,7 +35,16 @@ This is a crowdfunding platform for games with a developer theme. The applicatio
 ### Code formatting requirements
 
 - Use TypeScript with explicit types for function parameters and return values, especially in the data layer (`db/`, `src/lib/`)
+- Prefer `interface` for public object shapes and component contracts; use `type` for unions and intersection types
+- Avoid implicit `any`, and prefer small, descriptive types over broad anonymous objects
 - Frontend code (TypeScript, Astro) must pass ESLint checks (`npm run lint`)
+
+### Documentation and comments
+
+- Comment the intent behind a decision, not the mechanics already visible in code
+- Remove or update outdated comments whenever the implementation changes
+- Every exported function in `db/` and `src/lib/` must have JSDoc/TSDoc with a summary, `@param` tags, and a `@returns` description
+- Reusable Astro components should document their `Props` interface so the contract is obvious without reading the implementation
 
 ### Data Layer Patterns (Drizzle + Node SQLite)
 
